@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0028)http://bd.036600.com.cn/via/ -->
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8";>
+<meta content="en-us" http-equiv="Content-Language">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<title>视频</title>
+<style>
+html, * {
+	-webkit-user-select:text!important;
+	 -moz-user-select:text!important;
+	 }
+html, body {
+	text-align:center;
+	height:100%;
+}
+* {
+	margin:0;
+	padding:0；
+}
+#content {
+	width:100%;	
+	height:100%;
+}
+#player_div {
+	width:100%;
+	margin:0 auto;
+	height:300px;
+	padding-bottom:30px;
+}
+#player {
+	width:100%;
+	height:300px;
+	margin:0 auto;
+}
+
+#select {
+	width:100%;
+	height:40px;
+	font-size:14px;
+	outline:0;
+	padding-left:10px;
+	border:1px #c8cccf solid;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 rgba(70,70,40,.4);
+	-webkit-animation: fadeIn 2.5s;
+	animation: fadeIn 2.5s;
+	background-color: rgba(255,255,255,.0);
+}
+	
+.search_bar {
+	-webkit-animation: fadeIn 2.5s;
+	animation: fadeIn 2.5s;
+	background-color: rgba(255,255,255,.0);
+	display: table;
+	vertical-align: middle;
+	width: 100%;
+	margin: 0 auto;
+	border:none;
+}
+#search_input {
+	width: 100%;
+	height: 35px;
+	color: #009;
+	box-shadow: 0 0 5px 0 rgba(70,70,40,.4);
+	-webkit-animation: fadeIn 2.5s;
+	animation: fadeIn 2.5s;
+	background-color: transparent;
+	border-radius: 5px;
+	font-size:14px;
+	border:none;
+	text-indent:15px;
+	outline:0
+}
+#search_submit {
+	width:100%;
+	height: 40px;
+	font-size: 18px;
+	font-weight: 500;
+	color:#FFF;
+	background-color:#4F94CD;
+	border:none;
+	outline:0;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 rgba(70,70,40,.4);
+	-webkit-animation: fadeIn 2.5s;
+	animation: fadeIn 2.5s;
+
+}
+@media screen and (min-width:1024px) {
+	#player_div {
+		width:100%;
+		max-width:1000px;
+		height:500px;
+	}
+	#player {
+		width:100%;
+		max-width:1000px;
+		height:500px;
+	}
+	.search_bar {
+		width:100%;
+		max-width:1000px;
+	}	
+</style>
+<script src="https://cdn.bootcss.com/jquery/1.2.3/jquery.min.js"></script>
+<script type="text/javascript">/* 鼠标特效 */ 
+var a_idx = 0; 
+jQuery(document).ready(function($) { 
+    $("body").click(function(e) { 
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善"); 
+        var $i = $("<span/>").text(a[a_idx]); 
+        a_idx = (a_idx + 1) % a.length; 
+        var x = e.pageX, 
+        y = e.pageY; 
+        $i.css({ 
+            "z-index": 99, 
+            "top": y - 20, 
+            "left": x, 
+            "position": "absolute", 
+            "font-weight": "normal", 
+            "color": "#00CD00" 
+        }); 
+        $("body").append($i); 
+        $i.animate({ 
+            "top": y - 180, 
+            "opacity": 0 
+        }, 
+        1500, 
+        function() { 
+            $i.remove(); 
+        }); 
+    }); 
+});</script>
+</head>
+<body>
+<div id="content">
+	<div id="player_div">
+    	<iframe id="player" name="player" src="http://api.xfsub.com/index.php?url=?" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div class="search_bar">
+        <select class="" id="select">
+            <option rel="nofollow" value="http://y.mt2t.com/lines" selected="selected">接口1</option>
+            <option rel="nofollow" value="http://api.xfsub.com/index.php" >接口2</option>
+            <option rel="nofollow" value="http://j.zz22x.com/jx/">接口3</option>
+            <option rel="nofollow" value="http://jiexi.071811.cc/jx.php" >接口4</option>
+            <option rel="nofollow" value="http://yun.mt2t.com/yun" >接口5</option>
+            <option rel="nofollow" value="http://000o.cc/jx/ty.php" >接口6</option>
+            <option rel="nofollow" value="http://jiexi.92fz.cn/player/vip.php" >接口7</option>
+            <option rel="nofollow" value="http://api.wlzhan.com/sudu/">接口8</option>
+            <option rel="nofollow" value="http://api.baiyug.cn/vip/index.php">接口9</option> 
+        </select>
+        <br><br>
+        <form action="#" class="search_bar" target="player" id="myFrom" >
+          <input type="text" name="url" placeholder="输入网址点击播放，如遇不能播放，切换别的接口再播放" autocomplete="off" id="search_input" >
+          <br><br>
+          <input type="submit" id="search_submit" value="播放" onClick="test('search_input')">
+        </form>
+    </div>
+</div>
+<script>
+function test(obj){
+	if(document.getElementById(obj).value.length==0){
+		alert('请输入网址，不输入网址播放个鬼啊');
+		
+		self.location='vip.html';
+		}
+		var myselect=document.getElementById("select");
+		var index=myselect.selectedIndex
+		myselect.options[index].value;
+		document.forms.myFrom.action=myselect.options[index].value;
+	}
+	
+</script>
+</body>
+</html>

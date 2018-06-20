@@ -1,0 +1,11 @@
+<select class="" id="select">
+            <option rel="nofollow" value="http://y.mt2t.com/lines" selected="selected">接口1</option>
+            <option rel="nofollow" value="http://api.xfsub.com/index.php" >接口2</option>
+            <option rel="nofollow" value="http://j.zz22x.com/jx/">接口3</option>
+            <option rel="nofollow" value="http://jiexi.071811.cc/jx.php" >接口4</option>
+            <option rel="nofollow" value="http://yun.mt2t.com/yun" >接口5</option>
+            <option rel="nofollow" value="http://000o.cc/jx/ty.php" >接口6</option>
+            <option rel="nofollow" value="http://jiexi.92fz.cn/player/vip.php" >接口7</option>
+            <option rel="nofollow" value="http://api.wlzhan.com/sudu/">接口8</option>
+            <option rel="nofollow" value="http://api.baiyug.cn/vip/index.php">接口9</option> 
+        </select>
